@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev-build": "webpack --config webpack.dev.config.js",
-    "start": "webpack-dev-server --config webpack.dev.config.js --color --progress --hot",
+    "dev-build": "./node_modules/.bin/webpack --config webpack.dev.config.js",
+    "start": "./node_modules/.bin/webpack-dev-server --config webpack.dev.config.js --color --progress --hot",
     "build": "webpack --config webpack.config.js",
     "mock": "json-server mock/mock.js --watch --port 8090",
     "mockdev": "npm run mock & npm start"
@@ -43,7 +43,7 @@
     "style-loader": "^0.18.2",
     "uglifyjs-webpack-plugin": "^0.4.6",
     "url-loader": "^0.5.9",
-    "webpack": "^3.5.5",
+    "webpack": "^3.12.0",
     "webpack-dev-server": "^2.7.1",
     "webpack-merge": "^4.1.0"
   },
