@@ -1,6 +1,6 @@
 const path = require('path');
 // 每次会自动把js插入到你的模板index.html里面去。
-// var HtmlWebpackPlugin = require('html-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
@@ -16,7 +16,7 @@ module.exports = {
     output: {
         path: path.join(__dirname, './dist'),
         filename: 'bundle.js',
-        chunkFilename:'[name].[chunkhash].js'
+        chunkFilename: '[name].[chunkhash].js'
 
     },
     /*src文件夹下面的以.js结尾的文件，要使用babel解析*/
@@ -37,8 +37,8 @@ module.exports = {
             test: /\.(png|jpg|gif)/,
             use: [{
                 loader: 'url-loader',
-                options:{
-                    limit:8092
+                options: {
+                    limit: 8092
                 }
             }]
         }]
@@ -65,5 +65,9 @@ module.exports = {
             router: path.join(__dirname, 'src/router')
         }
     },
+    plugins: [new HtmlWebpackPlugin({
+        filename: 'index.html',
+        template: path.join(__dirname, 'src/index.html')
+    })],
 
 }

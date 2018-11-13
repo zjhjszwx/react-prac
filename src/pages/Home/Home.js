@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import {Button,DatePicker} from 'antd';
 export default class Home extends Component {
     constructor(props) {
         super(props);
@@ -17,7 +17,7 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                this is home11~<br/>
+                this is 2~<br/>
                 当前计数：{this.state.count}<br/>
                 <button onClick={() => this._handleClick()}>自增</button>
             </div>

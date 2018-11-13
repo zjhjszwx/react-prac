@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import {AppContainer} from 'react-hot-loader';
-
+import 'antd/dist/antd.css'
 import getRouter from './router/router';
 
 /*初始化*/
