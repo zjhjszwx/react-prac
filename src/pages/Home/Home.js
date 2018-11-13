@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import './index.css';
 export default class Home extends Component {
     constructor(props) {
         super(props);
@@ -17,9 +17,14 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                this is home11~<br/>
+                this is home111~<br/>
                 当前计数：{this.state.count}<br/>
                 <button onClick={() => this._handleClick()}>自增</button>
+                <li>
+                <i className="icon iconfont">&#xe638;</i>
+                    <div className="name">草莓</div>
+                    <div className="code">&amp;#xe638;</div>
+                </li>
             </div>
         )
     }

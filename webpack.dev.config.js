@@ -1,6 +1,6 @@
 const path = require('path');
 // 每次会自动把js插入到你的模板index.html里面去。
-// var HtmlWebpackPlugin = require('html-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
@@ -34,7 +34,7 @@ module.exports = {
             test: /\.css$/,
             use: ['style-loader', 'css-loader']
         }, {
-            test: /\.(png|jpg|gif)/,
+            test: /\.(png|jpg|gif|woff|woff2|eot|ttf|svg)/,
             use: [{
                 loader: 'url-loader',
                 options:{
@@ -65,5 +65,9 @@ module.exports = {
             router: path.join(__dirname, 'src/router')
         }
     },
+    plugins: [new HtmlWebpackPlugin({
+        filename: 'index.html',
+        template: path.join(__dirname, 'src/index.html')
+    })],
 
 }
