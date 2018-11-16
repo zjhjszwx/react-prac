@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import {Button,DatePicker} from 'antd';
+import {Button,DatePicker, Icon} from 'antd';
+
+import Icons from './Icon'
 export default class Home extends Component {
     constructor(props) {
         super(props);
@@ -19,13 +21,15 @@ export default class Home extends Component {
             <div>
                 this is home111~<br/>
                 当前计数：{this.state.count}<br/>
-                <button onClick={() => this._handleClick()}>自增</button>
-                <li>
-                <i className="icon iconfont">&#xe638;</i>
-                    <div className="name">草莓</div>
-                    <div className="code">&amp;#xe638;</div>
-                </li>
+                <button onClick={() => this._handleClick()}>自增11</button>
+                <i className="iconfont icon-file-zip" />
+                <i className="iconfont icon-huodong"></i>
+
+                <Icons type="close" color="red" />
             </div>
         )
     }
 }
+
+
+

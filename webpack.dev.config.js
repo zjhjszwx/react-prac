@@ -34,12 +34,21 @@ module.exports = {
             test: /\.css$/,
             use: ['style-loader', 'css-loader']
         }, {
-            test: /\.(png|jpg|gif|woff|woff2|eot|ttf|svg)/,
+            test: /\.(png|jpg|gif|woff|woff2|eot|ttf|svg)$/,
             use: [{
                 loader: 'url-loader',
                 options: {
                     limit: 8092
                 }
+            }]
+        },{
+            test:/\.scss$/,
+            use: [{
+                loader: "style-loader" // 将 JS 字符串生成为 style 节点
+            }, {
+                loader: "css-loader" // 将 CSS 转化成 CommonJS 模块
+            }, {
+                loader: "sass-loader" // 将 Sass 编译成 CSS
             }]
         }]
     },
