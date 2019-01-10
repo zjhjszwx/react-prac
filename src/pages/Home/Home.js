@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import {Button,DatePicker, Icon} from 'antd';
-
-import Icons from './Icon'
-export default class Home extends Component {
+import Clock from './Clock';
+import withTimer from './withTimer';
+class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -19,17 +18,13 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                this is home111~<br/>
-                当前计数：{this.state.count}<br/>
-                <button onClick={() => this._handleClick()}>自增11</button>
-                <i className="iconfont icon-file-zip" />
-                <i className="iconfont icon-huodong"></i>
-
-                <Icons type="close" color="red" />
+                {/* <Clock/> */}
+                {/* withTimer{this.props.time.toLocaleString()} */}
             </div>
         )
     }
 }
 
+export default withTimer(Home)
 
 
