@@ -11,7 +11,7 @@ class TabSelect extends Component {
     };
 
     render() {
-        const { value, options, onChange,children } = this.props;
+        const { value, options, onChange } = this.props;
         return (
             <div>
                 <ul>
