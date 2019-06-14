@@ -6,7 +6,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 // 清理dist
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
-    devtool: 'cheap-module-source-map',
+    devtool: 'source-map',
     entry: {
         app: [
             path.join(__dirname, 'src/index.js')

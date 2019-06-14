@@ -4,6 +4,7 @@ import withTimer from './withTimer';
 import TabSelectSimple from './TabSelector'
 import Think from './ThinkingInReact';
 
+import Context from './Context';
 class Home extends Component {
     
 
@@ -13,7 +14,8 @@ class Home extends Component {
                 {/* <Clock/> */}
                 {/* withTimer{this.props.time.toLocaleString()} */}
                 {/* <TabSelectSimple/> */}
-                <Think />
+                {/* <Think /> */}
+                <Context />
             </div>
         )
     }
