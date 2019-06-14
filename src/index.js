@@ -24,19 +24,24 @@
 //     )
 // }
 
-
 import React, { Component } from 'react';
-import { HashRouter as Router, Route } from 'react-router-dom';
-import ReactDom  from 'react-dom'
-const Home = () => <div>home</div>;
+// import { HashRouter as Router, Route } from 'react-router-dom';
+import { Router, Route } from './pages/Home/Router';
+import ReactDom from 'react-dom';
+const Home = (props, context) => {
+    console.log(window.location.hash.slice(1));
+    console.log(props, context);
+    return <div>home</div>;
+};
 const User = () => <div>user</div>;
 const Profile = () => <div>Profile</div>;
-ReactDom.render(<Router>
-    <div>
-        <Route path="/home" component={Home} />
-        <Route path="/user" component={User} />
-        <Route path="/profile" component={Profile} />
-    </div>
-</Router>,document.getElementById('app'))
-
-
+ReactDom.render(
+    <Router>
+        <div>
+            <Route path="/home" component={Home} />
+            <Route path="/user" component={User} />
+            <Route path="/profile" component={Profile} />
+        </div>
+    </Router>,
+    document.getElementById('app')
+);
