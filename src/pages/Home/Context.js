@@ -36,3 +36,6 @@ export default class Context extends Component {
         return <MiddleComponent />;
     }
 }
+
+
+//slot 将父组件插入到子组件模板  

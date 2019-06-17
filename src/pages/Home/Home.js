@@ -5,7 +5,7 @@ import TabSelectSimple from './TabSelector'
 import Think from './ThinkingInReact';
 import Mobile from '../../component/hightOrder/Mobile';
 import Username from '../../component/hightOrder/Username';
-import Route from './ReactRoute';
+import Context from './Context'
 class Home extends Component {
     
 
@@ -18,7 +18,7 @@ class Home extends Component {
                 {/* <Think /> */}
                 {/* <Mobile /> */}
                 {/* <Username /> */}
-                <Route />
+                <Context />
             </div>
         )
     }
