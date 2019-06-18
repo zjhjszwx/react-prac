@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-
+import { Provider } from './context';
 export default class HashRouter extends Component {
-    static childContextTypes = {
-        location: PropTypes.object,
-        match: PropTypes.object
-    };
+    // static childContextTypes = {
+    //     location: PropTypes.object,
+    //     match: PropTypes.object
+    // };
     constructor(props) {
         super(props);
 
@@ -15,12 +15,12 @@ export default class HashRouter extends Component {
             }
         };
     }
-    getChildContext = () => {
-        return {
-            location: this.state.location,
-            match: {}
-        };
-    };
+    // getChildContext = () => {
+    //     return {
+    //         location: this.state.location,
+    //         match: {}
+    //     };
+    // };
 
     componentDidMount() {
         window.addEventListener('hashchange', () => {
@@ -33,7 +33,16 @@ export default class HashRouter extends Component {
     }
 
     render() {
+        let value = {
+            location: this.state.location,
+            match: {},
+            history: {
+                push(to) {
+                    window.location.hash = to;
+                }
+            }
+        };
         console.log(window.location.hash.slice(1));
-        return this.props.children;
+        return <Provider value={value}>{this.props.children}</Provider>;
     }
 }
