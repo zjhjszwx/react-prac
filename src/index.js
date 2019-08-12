@@ -1,25 +1,25 @@
-// import React from 'react';
-// import ReactDom from 'react-dom';
-// import { AppContainer } from 'react-hot-loader';
-// import 'antd/dist/antd.css';
-// import getRouter from './router/router';
+import React from 'react';
+import ReactDom from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
+import 'antd/dist/antd.css';
+import getRouter from './router/router';
 
-// /*初始化*/
-// renderWithHotReload(getRouter());
+/*初始化*/
+renderWithHotReload(getRouter());
 
-// /*热更新*/
-// if (module.hot) {
-//     module.hot.accept('./router/router', () => {
-//         const getRouter = require('./router/router').default;
-//         renderWithHotReload(getRouter());
-//     });
-// }
+/*热更新*/
+if (module.hot) {
+    module.hot.accept('./router/router', () => {
+        const getRouter = require('./router/router').default;
+        renderWithHotReload(getRouter());
+    });
+}
 
-// function renderWithHotReload(RootElement) {
-//     ReactDom.render(<AppContainer>{RootElement}</AppContainer>, document.getElementById('app'));
-// }
+function renderWithHotReload(RootElement) {
+    ReactDom.render(<AppContainer>{RootElement}</AppContainer>, document.getElementById('app'));
+}
 
-import React, { Component } from 'react';
+/* import React, { Component } from 'react';
 // import { HashRouter as Router, Route, Link, Switch } from 'react-router-dom';
 import { Router, Route, Link, Switch } from './pages/Home/Router';
 import ReactDOM from 'react-dom';
@@ -47,3 +47,4 @@ ReactDOM.render(
     </Router>,
     document.getElementById('app')
 );
+ */
