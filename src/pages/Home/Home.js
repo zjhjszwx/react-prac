@@ -7,18 +7,14 @@ import Mobile from '../../component/hightOrder/Mobile';
 import Username from '../../component/hightOrder/Username';
 import Context from './Context';
 import ReactPatten from './reactPattern';
+import Hook from '../Hooks';
+import UseStateDemo from '../Hooks/useStateDemo';
 class Home extends Component {
     render() {
         return (
             <div>
-                {/* <Clock/> */}
-                {/* withTimer{this.props.time.toLocaleString()} */}
-                {/* <TabSelectSimple/> */}
-                {/* <Think /> */}
-                {/* <Mobile /> */}
-                {/* <Username /> */}
-                {/* <Context /> */}
-                <ReactPatten time={new Date()} />
+                <Hook />
+                <UseStateDemo />
             </div>
         );
     }
