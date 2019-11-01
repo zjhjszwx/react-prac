@@ -9,12 +9,12 @@ import Context from './Context';
 import ReactPatten from './reactPattern';
 import Hook from '../Hooks';
 import UseStateDemo from '../Hooks/useStateDemo';
+import UseEffect from '../Hooks/useEffect';
 class Home extends Component {
     render() {
         return (
             <div>
-                <Hook />
-                <UseStateDemo />
+                <UseEffect />
             </div>
         );
     }
