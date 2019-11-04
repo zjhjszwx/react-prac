@@ -22,6 +22,7 @@
   "author": "brickspert",
   "license": "ISC",
   "devDependencies": {
+    "animejs": "^3.1.0",
     "antd": "^3.10.7",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",

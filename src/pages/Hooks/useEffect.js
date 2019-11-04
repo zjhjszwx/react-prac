@@ -1,5 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
+import anim from 'animejs';
 
+// 每次副作用执行，都会返回一个新的clear函数
+// clear函数会在下一次副作用逻辑之前执行（DOM渲染完成之后）
+// 组件销毁也会执行一次
 function useEffectDemo() {
     const [count, setCount] = useState(0);
 
@@ -12,18 +16,6 @@ function useEffectDemo() {
 
         return () => {
             console.log('clear', timer);
-            clearTimeout(timer);
-        };
-    }, []);
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setCount(count + 1);
-        }, 300);
-
-        console.log('effect1', timer);
-
-        return () => {
-            console.log('clear2', timer);
             clearTimeout(timer);
         };
     }, []);
@@ -72,4 +64,5 @@ function Counter2() {
         </div>
     );
 }
-export default Counter2;
+
+export default useEffectDemo;
