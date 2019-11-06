@@ -10,6 +10,7 @@ import ReactPatten from './reactPattern';
 import Hook from '../Hooks';
 import UseStateDemo from '../Hooks/useStateDemo';
 import UseEffect from '../Hooks/useEffect';
+import UseRef from '../Hooks/useRef';
 class Home extends Component {
     render() {
         return (
