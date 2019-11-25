@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import anim from 'animejs';
+import anime from 'animejs';
 
 // 每次副作用执行，都会返回一个新的clear函数
 // clear函数会在下一次副作用逻辑之前执行（DOM渲染完成之后）
@@ -26,7 +26,6 @@ function useEffectDemo() {
             <div>{count}</div>
             <div style={{ width: 50, height: 50, background: 'red' }}></div>
             <button onClick={() => setCount(count + 1)}>btn</button>
-            <TestUseCallback num={count} />
         </div>
     );
 }
@@ -66,22 +65,54 @@ function Counter2() {
     );
 }
 
-export default useEffectDemo;
+function Demo1() {
+    const [anime01, setAnime01] = useState(false);
+    const [anime02, setAnime02] = useState(false);
+    const element = useRef();
 
-//回调函数及依赖项数组作为参数传入 useCallback, 返回该函数的memoized版本
-// useCallback的返回结果是一个函数，函数体正好就是传入的第一个参数。
-// useMemo的返回结果是一个值，是第一个参数的运行结果。
+    useEffect(() => {
+        anime01 && !anime02 && animate01();
+        anime02 && !anime01 && animate02();
+    }, [anime01, anime02]);
 
-function TestUseCallback(num) {
-    const callback = useCallback(() => {
-        return num;
-    }, []);
+    function animate01() {
+        if (element) {
+            anime({
+                targets: element.current,
+                translateX: 400,
+                backgroundColor: '#FF8F42',
+                borderRadius: ['0%', '50%'],
+                complete: () => {
+                    setAnime01(false);
+                }
+            });
+        }
+    }
 
-    console.log('记忆 num > ', callback());
-    console.log('原始 num > ', num);
+    function animate02() {
+        if (element) {
+            anime({
+                targets: element.current,
+                translateX: 0,
+                backgroundColor: '#FFF',
+                borderRadius: ['50%', '0%'],
+                easing: 'easeInOutQuad',
+                complete: () => {
+                    setAnime02(false);
+                }
+            });
+        }
+    }
+
+    function clickHandler() {
+        setAnime01(true);
+        setTimeout(setAnime02.bind(null, true), 500);
+    }
+
     return (
-        <div>
-            <p>TestUseCallback</p>
+        <div className="container" onClick={clickHandler}>
+            <div className="el" ref={element} style={{ width: 50, height: 50, background: 'red' }} />
         </div>
     );
 }
+export default Demo1;

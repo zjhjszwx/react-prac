@@ -25,4 +25,36 @@ function Demo({ name, age }) {
     );
 }
 
-export default Demo;
+function Demo2() {
+    const [count, setCount] = useState(0);
+
+    const [count2] = useState(0); //可以这样定义一些逻辑变量
+    /*  setTimeout(() => {
+        setCount(count + 1);
+        // 无法获取 count
+        console.log(count);
+    }, 2000); */
+
+    return <button onClick={() => setCount(count + 1)}>btn{count}</button>;
+}
+
+function Demo3() {
+    const [count, setCount] = useState({ a: 1, b: 2 });
+
+    const click2 = () => {
+        count.b = 4;
+        console.log(count);
+    };
+    console.log('render');
+    return (
+        <div>
+            {/* 需要解构修改 */}
+            <button onClick={() => setCount({ ...count, a: count.a + 1 })}>btn</button>
+            <button onClick={click2}>btn2</button>
+            <p>{count.a}</p>
+            <p>{count.b}</p>
+        </div>
+    );
+}
+
+export default Demo3;
