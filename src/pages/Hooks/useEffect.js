@@ -1,34 +1,5 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import anime from 'animejs';
-
-// 每次副作用执行，都会返回一个新的clear函数
-// clear函数会在下一次副作用逻辑之前执行（DOM渲染完成之后）
-// 组件销毁也会执行一次
-function useEffectDemo() {
-    const [count, setCount] = useState(0);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setCount(count + 1);
-        }, 300);
-
-        console.log('effect', timer);
-
-        return () => {
-            console.log('clear', timer);
-            clearTimeout(timer);
-        };
-    }, []);
-
-    console.log('render');
-    return (
-        <div>
-            <div>{count}</div>
-            <div style={{ width: 50, height: 50, background: 'red' }}></div>
-            <button onClick={() => setCount(count + 1)}>btn</button>
-        </div>
-    );
-}
 
 function Counter() {
     const [count, setCount] = useState(0);
@@ -115,4 +86,59 @@ function Demo1() {
         </div>
     );
 }
-export default Demo1;
+
+// 受控组件
+function Demo2(props) {
+    const { value, onChange } = props;
+    const [count, setCount] = useState(0);
+    useEffect(() => {
+        setCount(value);
+    }, [value]);
+
+    return <div>{count}</div>;
+}
+
+// 每次副作用执行，都会返回一个新的clear函数
+// *clear函数会在下一次副作用逻辑之前执行（DOM渲染完成之后）
+// 组件销毁也会执行一次
+function Demo3(props) {
+    const { id } = props;
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        console.log('effect', id);
+        return () => {
+            console.log('clear', id);
+        };
+    }, [id]);
+
+    console.log('render', id);
+    return (
+        <div>
+            <div>{count}</div>
+        </div>
+    );
+}
+//props.id 传入两次 第一次为1,第二次为2
+//id = 1 output render1 effect 1
+//id = 2 output render2 clear1 effect2
+//销毁组件 output clear 2
+//练习
+function Demo4() {
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setCount(count + 1);
+        }, 300);
+        console.log('effect', timer);
+        return () => {
+            console.log('clear', timer);
+            clearTimeout(timer);
+        };
+    });
+    console.log('render');
+    return <div>{count}</div>;
+}
+
+export default Demo3;

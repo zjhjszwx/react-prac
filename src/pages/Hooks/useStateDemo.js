@@ -24,7 +24,7 @@ function Demo({ name, age }) {
         </div>
     );
 }
-
+//其他定义方式
 function Demo2() {
     const [count, setCount] = useState(0);
 
@@ -37,7 +37,7 @@ function Demo2() {
 
     return <button onClick={() => setCount(count + 1)}>btn{count}</button>;
 }
-
+//修改方式
 function Demo3() {
     const [count, setCount] = useState({ a: 1, b: 2 });
 
