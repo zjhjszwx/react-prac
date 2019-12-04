@@ -66,6 +66,6 @@ export default class Text extends React.Component {
         );
     }
 }
-//问题
+// 问题
 // 静态方法缺失
 // https://juejin.im/post/5c72b97de51d4545c66f75d5#heading-19
