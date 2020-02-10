@@ -11,6 +11,8 @@ import UseDefined from '../Hooks/UseDefined.tsx';
 import UseStateDemo from '../Hooks/useStateDemo';
 import UseEffect from '../Hooks/useEffect';
 import UseRef from '../Hooks/useRef';
+import UseReducer from '../Hooks/useReducer';
+import UseContext from '../Hooks/useContext';
 class Home extends Component {
     state = {
         count: 1
@@ -18,8 +20,8 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <UseDefined id={this.state.count} />
-                <button
+                <UseContext />
+                {/* <button
                     onClick={() =>
                         this.setState({
                             count: this.state.count + 1
@@ -27,7 +29,7 @@ class Home extends Component {
                     }
                 >
                     btn
-                </button>
+                </button> */}
             </div>
         );
     }
