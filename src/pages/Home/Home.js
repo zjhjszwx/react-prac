@@ -7,7 +7,7 @@ import Mobile from '../../component/hightOrder/Mobile';
 import Username from '../../component/hightOrder/Username';
 import Context from './Context';
 import ReactPatten from './reactPattern';
-import UseDefined from '../Hooks/UseDefined';
+import UseDefined from '../Hooks/UseDefined.tsx';
 import UseStateDemo from '../Hooks/useStateDemo';
 import UseEffect from '../Hooks/useEffect';
 import UseRef from '../Hooks/useRef';
