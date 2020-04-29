@@ -7,29 +7,23 @@ import Mobile from '../../component/hightOrder/Mobile';
 import Username from '../../component/hightOrder/Username';
 import Context from './Context';
 import ReactPatten from './reactPattern';
-import UseDefined from '../Hooks/UseDefined.tsx';
+import UseDefined from '../Hooks/useDefined.js';
 import UseStateDemo from '../Hooks/useStateDemo';
 import UseEffect from '../Hooks/useEffect';
 import UseRef from '../Hooks/useRef';
 import UseReducer from '../Hooks/useReducer';
 import UseContext from '../Hooks/useContext';
+import SyntheticEvent from '../lifeCycle/SyntheticEvent'
 class Home extends Component {
     state = {
         count: 1
     };
+
     render() {
+        console.log(1)
         return (
             <div>
-                <UseContext />
-                {/* <button
-                    onClick={() =>
-                        this.setState({
-                            count: this.state.count + 1
-                        })
-                    }
-                >
-                    btn
-                </button> */}
+                <SyntheticEvent />
             </div>
         );
     }
