@@ -14,6 +14,8 @@ import UseRef from '../Hooks/useRef';
 import UseReducer from '../Hooks/useReducer';
 import UseContext from '../Hooks/useContext';
 import SyntheticEvent from '../lifeCycle/SyntheticEvent'
+
+import Key from '../Key/index'
 class Home extends Component {
     state = {
         count: 1
@@ -23,7 +25,7 @@ class Home extends Component {
         console.log(1)
         return (
             <div>
-                <SyntheticEvent />
+                <Key />
             </div>
         );
     }
