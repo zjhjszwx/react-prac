@@ -64,6 +64,7 @@
     "react-dom": "^16.7.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
+    "react-virtualized": "^9.21.2",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "to": "^0.2.9"

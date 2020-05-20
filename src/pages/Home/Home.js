@@ -14,8 +14,8 @@ import UseRef from '../Hooks/useRef';
 import UseReducer from '../Hooks/useReducer';
 import UseContext from '../Hooks/useContext';
 import SyntheticEvent from '../lifeCycle/SyntheticEvent'
-
 import Key from '../Key/index'
+import MTable from '../Table'
 class Home extends Component {
     state = {
         count: 1
@@ -24,7 +24,7 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <Key />
+                <MTable />
             </div>
         );
     }
