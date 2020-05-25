@@ -13,20 +13,17 @@ import UseEffect from '../Hooks/useEffect';
 import UseRef from '../Hooks/useRef';
 import UseReducer from '../Hooks/useReducer';
 import UseContext from '../Hooks/useContext';
-import SyntheticEvent from '../lifeCycle/SyntheticEvent'
-import Key from '../Key/index'
-import MTable from '../Table'
+import SyntheticEvent from '../lifeCycle/SyntheticEvent';
+import Key from '../Key/index';
+import MTable from '../component/Table';
+import TSelect from '../component/Select';
 class Home extends Component {
     state = {
-        count: 1
+        count: 1,
     };
 
     render() {
-        return (
-            <div>
-                <MTable />
-            </div>
-        );
+        return <div><TSelect /></div>;
     }
 }
 export default Home;
