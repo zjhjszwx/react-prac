@@ -19,11 +19,15 @@ import MTable from '../component/Table';
 import TSelect from '../component/Select';
 class Home extends Component {
     state = {
-        count: 1,
+        count: 1
     };
 
     render() {
-        return <div><TSelect /></div>;
+        return (
+            <div>
+                <UseStateDemo />
+            </div>
+        );
     }
 }
 export default Home;
