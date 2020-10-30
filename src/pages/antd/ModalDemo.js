@@ -1,9 +1,9 @@
 import React, { memo } from 'react'
 import { Modal, Radio, Form, DatePicker } from 'antd'
 function ModalDemo({ visible, onCancel, onOk, name }) {
-    if (!visible) {
-        return
-    }
+    // if (!visible) {
+    //     return
+    // }
     const [form] = Form.useForm();
     console.log('modalDemo', name)
 
