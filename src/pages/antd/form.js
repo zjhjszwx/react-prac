@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from 'react'
 import Hoc from './hoc'
 import ModalDemo from './ModalDemo'
-import {Button} from 'antd'
-
+import { Button } from 'antd'
+import Modal4 from './Modal4';
 function useModal(initial) {
     const [visible, setVis] = useState(false);
     const open = () => {
@@ -16,9 +16,6 @@ function useModal(initial) {
 function Demo(props) {
     const [visible, setVisible] = useState(false);
     const [visible1, setVisible1] = useState(false);
-    const modal4 = useModal();
-
-    console.log('render', modal4)
 
     return (
         <div>
@@ -29,8 +26,8 @@ function Demo(props) {
 
             <Button onClick={() => props.open()}>btn2</Button>
             <ModalDemo visible={props.visible} onCancel={() => props.close()} onOk={() => props.open()} name="3" />
-            <Button onClick={() => props.open()}>btn4</Button>
-            <ModalDemo visible={modal4.visible} onCancel={() => modal4.close()} onOk={() => modal4.open()} name="4" />
+            <Button onClick={() => Modal4.show({ onOk: () => { console.log('ok....') } })}> btn </Button>
+            <Modal4 />
 
         </div>
     )
