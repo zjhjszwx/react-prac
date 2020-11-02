@@ -77,6 +77,7 @@ module.exports = {
         contentBase: path.join(__dirname, './dist'),
         port: 8080,
         historyApiFallback: true,
+        clientLogLevel: 'none'
     },
     resolve: {
         alias: {

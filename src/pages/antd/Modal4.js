@@ -1,5 +1,6 @@
 import React, { memo, useState, useRef, useEffect } from "react";
 import { Modal } from "antd";
+
 const Modal4 = memo((props, ref) => {
     const [visible, setVisible] = useState(false);
     const payloadRef = useRef({});
@@ -16,7 +17,7 @@ const Modal4 = memo((props, ref) => {
         setVisible(false);
         method && method();
     };
-
+    console.log('modal4', payloadRef)
     return (
         <Modal
             title="方案四"
