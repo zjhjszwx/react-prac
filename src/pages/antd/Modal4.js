@@ -1,5 +1,5 @@
 import React, { memo, useState, useRef, useEffect } from "react";
-// import { Modal } from "antd";
+import { Modal } from "antd";
 const Modal4 = memo((props, ref) => {
     const [visible, setVisible] = useState(false);
     const payloadRef = useRef({});
@@ -17,26 +17,19 @@ const Modal4 = memo((props, ref) => {
         method && method();
     };
 
-    // console.log('modal4', payloadRef, Modal4)
-    const Item = props.component
-    // return (
-    //     <Modal
-    //         title="方案四"
-    //         visible={visible}
-    //         onOk={wrapWithClose(payloadRef.current.onOk)}
-    //         onCancel={wrapWithClose(payloadRef.current.onCancel)}
-    //     >
-    //         <div>
-    //             123
-    //         </div>
-    //     </Modal>
-    // );
+    return (
+        <Modal
+            title="方案四"
+            visible={visible}
+            onOk={wrapWithClose(payloadRef.current.onOk)}
+            onCancel={wrapWithClose(payloadRef.current.onCancel)}
+        >
+            <div>
+                Modal4
+            </div>
+        </Modal>
+    );
 
-    return <Item
-        visible={visible}
-        onOk={wrapWithClose(payloadRef.current.onOk)}
-        onCancel={wrapWithClose(payloadRef.current.onCancel)}
-    />
 });
 
 export default Modal4;

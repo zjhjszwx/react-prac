@@ -3,11 +3,13 @@ import Hoc from './hoc'
 import ModalDemo from './ModalDemo'
 import { Button } from 'antd'
 import Modal4 from './Modal4';
+import Modal5 from './Modal5';
 import Item from './item'
 function Demo(props) {
     const [visible, setVisible] = useState(false);
     const [visible1, setVisible1] = useState(false);
 
+    console.log('form')
     return (
         <div>
             <Button onClick={() => setVisible(true)}>btn</Button>
@@ -18,8 +20,11 @@ function Demo(props) {
             <Button onClick={() => props.open()}>btn2</Button>
             <ModalDemo visible={props.visible} onCancel={() => props.close()} onOk={() => props.open()} name="3" />
             <Button onClick={() => Modal4.show({ onOk: () => { console.log('ok....') } })}> btn4 </Button>
-            <Modal4 component={Item} />
+            <Modal4 />
+            <Button onClick={() => Item.show({ onOk: () => { console.log('modal 5 ok....') } })}> btn5 </Button>
+            {/* <Modal5 ><Item /></Modal5> */}
             <Item />
+            
         </div>
     )
 }

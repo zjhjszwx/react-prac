@@ -1,9 +1,10 @@
 import React from 'react'
 import { Modal, Button } from 'antd';
+import Modal5 from './Modal5';
 
 const Demo = (props) => {
 
-    console.log('modalDemo', '4')
+    console.log('modalDemo 5', props)
 
     const { visible, onOk, onCancel } = props
     return (
@@ -16,11 +17,11 @@ const Demo = (props) => {
             onOk={onOk}
             onCancel={onCancel}
         >
-            继续添加成员需要.....
+            item
         </Modal>
     )
 
 }
 
-export default Demo
+export default Modal5(Demo)
 
