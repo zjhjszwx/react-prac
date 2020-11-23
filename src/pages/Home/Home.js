@@ -17,20 +17,20 @@ import SyntheticEvent from '../lifeCycle/SyntheticEvent';
 import Key from '../Key/index';
 import MTable from '../component/Table';
 import TSelect from '../component/Select';
-
 import Memo1 from '../Hooks/memo'
+import ResilientComponents from '../danBlog/resilientComponents'
 class Home extends Component {
-    state = {
-        count: 1
-    };
+  state = {
+    count: 1
+  };
 
-    render() {
-        return (
-            <div>
-                <UseRef />
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div>
+        <ResilientComponents />
+      </div>
+    );
+  }
 }
 export default Home;
 
