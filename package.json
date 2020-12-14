@@ -60,7 +60,13 @@
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
+    "@emotion/css": "^11.0.0",
     "axios": "^0.16.2",
+    "emotion": "^11.0.0",
+    "escape-html": "^1.0.3",
+    "image-extensions": "^1.1.0",
+    "is-hotkey": "^0.2.0",
+    "is-url": "^1.2.4",
     "react": "^16.11.0",
     "react-dom": "^16.7.0",
     "react-redux": "^5.0.6",
@@ -68,6 +74,11 @@
     "react-virtualized": "^9.21.2",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
+    "slate": "^0.59.0",
+    "slate-history": "^0.59.0",
+    "slate-html-serializer": "^0.8.13",
+    "slate-hyperscript": "^0.59.0",
+    "slate-react": "^0.59.0",
     "to": "^0.2.9"
   }
 }
