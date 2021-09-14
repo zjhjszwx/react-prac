@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Item from './Item';
 
 const height = 60;
-const bufferSize = 5;
 const windowHeight = 300;
 class VirtualizedList extends Component {
   constructor(props) {
@@ -14,7 +13,7 @@ class VirtualizedList extends Component {
       visibleData: [],
     };
 
-    this.data = new Array(100000).fill(true);
+    this.data = new Array(10).fill(true);
     this.startIndex = 0;
     this.endIndex = 0;
     this.scrollTop = 0;
@@ -33,17 +32,12 @@ class VirtualizedList extends Component {
   handleScroll = () => {
     let scrollTop = this.myRef.current.scrollTop;
     if (scrollTop > this.scrollTop) {
-      this.startIndex = Math.ceil(scrollTop / height);
+      this.startIndex = Math.floor(scrollTop / height);
       this.endIndex = this.startIndex + this.visibleCount;
 
       this.updateVisibleData(scrollTop);
     }
   };
-
-  updateBoundaryIndex(scrollTop) {
-    scrollTop = scrollTop || 0;
-    //用户正常滚动下，根据 scrollTop 找到新的锚点元素位置
-  }
 
   updateVisibleData(scrollTop) {
     // 显示的数据
@@ -61,39 +55,18 @@ class VirtualizedList extends Component {
   render() {
     const { startOffset, endOffset, visibleData } = this.state;
 
-    console.log('[  ] >', startOffset, endOffset);
-
     return (
-      <div ref={this.myRef} style={{ height: windowHeight, overflow: 'scroll' }}>
+      <div ref={this.myRef} style={{ height: windowHeight, overflow: 'scroll', background: '#eee' }}>
         <div
           style={{
             paddingTop: `${startOffset}px`,
             paddingBottom: `${endOffset}px`,
-            height: windowHeight,
-            background: '#eee',
           }}
         >
           {visibleData.map((item, index) => {
-            return (
-              <Item
-                // cachePosition={this.cachePosition}
-                key={this.startIndex + index}
-                index={this.startIndex + index}
-              />
-            );
+            return <Item key={this.startIndex + index} index={this.startIndex + index} />;
           })}
         </div>
-        {/* <div>
-          {this.data.map((item, index) => {
-            return (
-              <Item
-                // cachePosition={this.cachePosition}
-                key={this.startIndex + index}
-                index={this.startIndex + index}
-              />
-            );
-          })}
-        </div> */}
       </div>
     );
   }

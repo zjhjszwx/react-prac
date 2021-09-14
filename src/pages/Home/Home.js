@@ -31,7 +31,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <TimeTest />
+        <VirtualList />
       </div>
     );
   }
