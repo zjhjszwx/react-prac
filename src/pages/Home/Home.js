@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CompositePattern from '../thinkReact/ComponentDesign/CompositePattern';
 
 class Home extends Component {
   state = {
@@ -6,7 +7,11 @@ class Home extends Component {
   };
 
   render() {
-    return <div>123</div>;
+    return (
+      <div>
+        <CompositePattern />
+      </div>
+    );
   }
 }
 export default Home;
