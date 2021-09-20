@@ -19,7 +19,7 @@ import MTable from '../component/Table';
 import TSelect from '../component/Select';
 import Memo1 from '../Hooks/memo'
 import ResilientComponents from '../danBlog/resilientComponents'
-import Test from '../PanziEditor/Test.js'
+import TableComponents from '../antd/TableComponent'
 class Home extends Component {
   state = {
     count: 1
@@ -28,7 +28,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Test />
+        <TableComponents />
       </div>
     );
   }
