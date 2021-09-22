@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CompositePattern from '../thinkReact/ComponentDesign/RenderProps/index';
+import CompositePattern from '../thinkReact/ComponentDesign/ClassExtend/index';
 
 class Home extends Component {
   state = {

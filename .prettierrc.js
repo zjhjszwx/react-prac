@@ -4,5 +4,5 @@ module.exports = {
     singleQuote: true,
     eslintIntegration: true,
     jsxBracketSameLine: false,
-    printWidth: 160
+    printWidth: 80
 };
