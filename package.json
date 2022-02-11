@@ -43,7 +43,7 @@
     "html-webpack-plugin": "^4.5.0",
     "json-server": "^0.12.1",
     "mockjs": "^1.0.1-beta3",
-    "node-sass": "^4.10.0",
+    "node-sass": "^7.0.0",
     "postcss-cssnext": "^3.0.2",
     "postcss-loader": "^2.0.6",
     "react-hot-loader": "^4.0.0-beta.21",
